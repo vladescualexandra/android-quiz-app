@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">quiz-app</string>
+    <string name="vladescu_alexandra_main_text">
+        Welcome! This quiz is supposed to test on a scale from 1 to 10 your knowledge of basic words in one of the following languages:
+    </string>
+    <string name="vladescu_alexandra_main_language_italian">Italian</string>
+    <string name="vladescu_alexandra_main_language_spanish">Spanish</string>
+    <string name="vladescu_alexandra_main_language_portuguese">Portuguese</string>
+    <string name="vladescu_alexandra_main_language_french">French</string>
+    <string name="vladescu_alexandra_main_btn_go">Let\'s go for it!</string>
 </resources>
