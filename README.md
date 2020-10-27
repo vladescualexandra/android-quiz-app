@@ -11,4 +11,8 @@ indeplineasca urmatoarele cerinte:
 pentru a implementa o interfata cat mai placuta. 
 
 
-![Alt text](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_main.jpg | height="400")
+
+![Main](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_main.jpg)
+![Word](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_word.jpg)
+![Finish](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_finish.jpg)
+
