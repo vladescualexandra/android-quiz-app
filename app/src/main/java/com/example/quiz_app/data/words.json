@@ -1,0 +1,212 @@
+[
+  {
+    "id": 0,
+    "url": "@drawable/apple",
+    "english": "apple",
+    "italian": "mela",
+    "spanish": "manzana",
+    "french": "pomme"
+  },
+  {
+    "id": 1,
+    "url": "@drawable/bag",
+    "english": "bag",
+    "italian": "sacchetto",
+    "spanish": "bolso",
+    "french": "sac"
+  },
+  {
+    "id": 2,
+    "url": "@drawable/bathroom",
+    "english": "bathroom",
+    "italian": "bagno",
+    "spanish": "baño",
+    "french": "salle de bains"
+  },
+  {
+    "id": 3,
+    "url": "@drawable/bed",
+    "english": "bed",
+    "italian": "letto",
+    "spanish": "cama",
+    "french": "lit"
+  },
+  {
+    "id": 4,
+    "url": "@drawable/book",
+    "english": "book",
+    "italian": "libro",
+    "spanish": "libro",
+    "french": "livre"
+  },
+  {
+    "id": 5,
+    "url": "@drawable/cake",
+    "english": "cake",
+    "italian": "torta",
+    "spanish": "pastel",
+    "french": "gâteau"
+  },
+  {
+    "id": 6,
+    "url": "@drawable/car",
+    "english": "car",
+    "italian": "macchina",
+    "spanish": "coche",
+    "french": "voiture"
+  },
+  {
+    "id": 7,
+    "url": "@drawable/cat",
+    "english": "cat",
+    "italian": "gatto",
+    "spanish": "gato",
+    "french": "chat"
+  },
+  {
+    "id": 8,
+    "url": "@drawable/chair",
+    "english": "chair",
+    "italian": "sedia",
+    "spanish": "silla",
+    "french": "chaise"
+  },
+  {
+    "id": 9,
+    "url": "@drawable/clock",
+    "english": "clock",
+    "italian": "orologio",
+    "spanish": "reloj",
+    "french": "l'horloge"
+  },
+  {
+    "id": 10,
+    "url": "@drawable/coffee",
+    "english": "coffee",
+    "italian": "caffè",
+    "spanish": "café",
+    "french": "café"
+  },
+  {
+    "id": 11,
+    "url": "@drawable/cookie",
+    "english": "cookie",
+    "italian": "biscotto",
+    "spanish": "galleta",
+    "french": "biscuit"
+  },
+  {
+    "id": 12,
+    "url": "@drawable/dog",
+    "english": "dog",
+    "italian": "cane",
+    "spanish": "perro",
+    "french": "chien"
+  },
+  {
+    "id": 13,
+    "url": "@drawable/fork",
+    "english": "fork",
+    "italian": "forchetta",
+    "spanish": "tenedor",
+    "french": "fourchette"
+  },
+  {
+    "id": 14,
+    "url": "@drawable/green",
+    "english": "green",
+    "italian": "verde",
+    "spanish": "verde",
+    "french": "vert"
+  },
+  {
+    "id": 15,
+    "url": "@drawable/house",
+    "english": "house",
+    "italian": "casa",
+    "spanish": "casa",
+    "french": "maison"
+  },
+  {
+    "id": 16,
+    "url": "@drawable/kitchen",
+    "english": "kitchen",
+    "italian": "cucina",
+    "spanish": "cocina",
+    "french": "cuisine"
+  },
+  {
+    "id": 17,
+    "url": "@drawable/milk",
+    "english": "milk",
+    "italian": "latte",
+    "spanish": "leche",
+    "french": "lait"
+  },
+  {
+    "id": 18,
+    "url": "@drawable/money",
+    "english": "money",
+    "italian": "i soldi",
+    "spanish": "dinero",
+    "french": "argent"
+  },
+  {
+    "id": 19,
+    "url": "@drawable/mug",
+    "english": "mug",
+    "italian": "tazza",
+    "spanish": "jarra",
+    "french": "agresser"
+  },
+  {
+    "id": 20,
+    "url": "@drawable/red",
+    "english": "red",
+    "italian": "rosso",
+    "spanish": "rojo",
+    "french": "rouge"
+  },
+  {
+    "id": 21,
+    "url": "@drawable/shoes",
+    "english": "shoes",
+    "italian": "scarpe",
+    "spanish": "zapatos",
+    "french": "chaussures"
+  },
+  {
+    "id": 22,
+    "url": "@drawable/spoon",
+    "english": "spoon",
+    "italian": "cucchiaio",
+    "spanish": "cuchara",
+    "french": "cuillère"
+  },
+  {
+    "id": 23,
+    "url": "@drawable/tea",
+    "english": "tea",
+    "italian": "tè",
+    "spanish": "té",
+    "french": "thé"
+  },
+  {
+    "id": 24,
+    "url": "@drawable/water",
+    "english": "water",
+    "italian": "acqua",
+    "spanish": "agua",
+    "french": "eau"
+  },
+  {
+    "id": 25,
+    "url": "@drawable/yellow",
+    "english": "yellow",
+    "italian": "giallo",
+    "spanish": "amarillo",
+    "french": "jaune"
+  }
+]
+
+

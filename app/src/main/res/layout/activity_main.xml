@@ -4,25 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/style_background"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/vladescu_alexandra_main_tv_welcome_text"
+        android:id="@+id/vladescu_alexandra_main_tv_welcome_text_part1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:gravity="center"
-        android:lines="4"
-        android:text="@string/vladescu_alexandra_main_text"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/vladescu_alexandra_main_text_part1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194" />
+        style="@style/style_textView"/>
+
+    <TextView
+        android:id="@+id/vladescu_alexandra_main_tv_welcome_text_part2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/vladescu_alexandra_main_text_part2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vladescu_alexandra_main_tv_welcome_text_part1"
+        style="@style/style_textView"/>
 
     <RadioGroup
         android:id="@+id/vladescu_alexandra_main_rg_language"
@@ -37,7 +51,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vladescu_alexandra_main_tv_welcome_text">
+        app:layout_constraintTop_toBottomOf="@+id/vladescu_alexandra_main_tv_welcome_text_part2">
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_italian"
@@ -47,7 +61,8 @@
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_italian"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/style_radioButton"/>
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_spanish"
@@ -56,7 +71,8 @@
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_spanish"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/style_radioButton"/>
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_french"
@@ -65,7 +81,8 @@
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_french"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/style_radioButton"/>
 
     </RadioGroup>
 
@@ -73,11 +90,16 @@
         android:id="@+id/vladescu_alexandra_main_btn_go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="@string/vladescu_alexandra_main_btn_go"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vladescu_alexandra_main_rg_language" />
+        style="@style/style_button"/>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">quiz-app</string>
-    <string name="vladescu_alexandra_main_text">
-        Welcome! Choose the language for the quiz:
-    </string>
+    <string name="vladescu_alexandra_main_text_part1">Welcome!</string>
+    <string name="vladescu_alexandra_main_text_part2">Choose the language you want to test on:</string>
+
     <string name="vladescu_alexandra_main_language_italian">Italian</string>
     <string name="vladescu_alexandra_main_language_spanish">Spanish</string>
     <string name="vladescu_alexandra_main_language_portuguese">Portuguese</string>

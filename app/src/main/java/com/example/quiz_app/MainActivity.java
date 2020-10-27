@@ -19,7 +19,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String LANGUAGE_KEY = "language_key";
-    private TextView vladescu_alexandra_main_tv_welcome_text;
     private RadioGroup vladescu_alexandra_main_rg_language;
     private RadioButton vladescu_alexandra_main_rb_language_italian;
     private RadioButton vladescu_alexandra_main_rb_language_spanish;
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setComponents() {
-        vladescu_alexandra_main_tv_welcome_text = findViewById(R.id.vladescu_alexandra_main_tv_welcome_text);
         vladescu_alexandra_main_rg_language = findViewById(R.id.vladescu_alexandra_main_rg_language);
         vladescu_alexandra_main_rb_language_italian = findViewById(R.id.vladescu_alexandra_main_rb_language_italian);
         vladescu_alexandra_main_rb_language_spanish = findViewById(R.id.vladescu_alexandra_main_rb_language_spanish);
