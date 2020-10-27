@@ -13,6 +13,6 @@ pentru a implementa o interfata cat mai placuta.
 
 
 ![Main](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_main.jpg)
-![Word](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_word.jpg)
-![Finish](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_finish.jpg)
+![Word](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_word.jpeg)
+![Finish](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_finish.jpeg)
 
