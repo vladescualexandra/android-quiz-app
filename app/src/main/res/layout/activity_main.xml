@@ -4,39 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/style_background"
-    tools:context=".MainActivity">
+    android:background="@color/background"
+    tools:context=".MainActivity"
+    style="@style/Theme.MaterialComponents.NoActionBar">
 
 
     <TextView
         android:id="@+id/vladescu_alexandra_main_tv_welcome_text_part1"
+        style="@style/text"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
-
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="@string/vladescu_alexandra_main_text_part1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/style_textView"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/vladescu_alexandra_main_tv_welcome_text_part2"
+        style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:text="@string/vladescu_alexandra_main_text_part2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vladescu_alexandra_main_tv_welcome_text_part1"
-        style="@style/style_textView"/>
+
+        />
 
     <RadioGroup
         android:id="@+id/vladescu_alexandra_main_rg_language"
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:onClick="onRadioButtonClicked"
@@ -55,39 +56,40 @@
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_italian"
+            style="@style/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_italian"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            style="@style/style_radioButton"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_spanish"
+            style="@style/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_spanish"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            style="@style/style_radioButton"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioButton
             android:id="@+id/vladescu_alexandra_main_rb_language_french"
+            style="@style/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
             android:text="@string/vladescu_alexandra_main_language_french"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            style="@style/style_radioButton"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/vladescu_alexandra_main_btn_go"
+        style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -95,7 +97,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        style="@style/style_button"/>
+        android:background="@drawable/button"
+        />
 
 
 
@@ -103,3 +106,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

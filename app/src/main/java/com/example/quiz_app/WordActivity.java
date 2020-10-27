@@ -27,7 +27,6 @@ public class WordActivity extends AppCompatActivity {
     private static String LANGUAGE_KEY;
     private static String LANGUAGE_NAME;
 
-    TextView vladescu_alexandra_word_tv_word;
     ImageView vladescu_alexandra_word_iv_image;
     RadioGroup vladescu_alexandra_word_rg_options;
     RadioButton vladescu_alexandra_word_rb_option1;
@@ -39,7 +38,7 @@ public class WordActivity extends AppCompatActivity {
     private static final Words words = new Words();
     private static int counter = 1;
     private static int correctAnswers = 0;
-    private static int right;
+    private static int right = 0;
 
     private Intent intent;
 
@@ -49,12 +48,13 @@ public class WordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word);
 
+        counter = 1;
+        correctAnswers = 0;
 
         setComponents();
 
         // SETTING THE LANGUAGE:
         LANGUAGE_KEY = getIntent().getStringExtra("LANGUAGE_KEY");
-        vladescu_alexandra_word_tv_word.append("Correct answers: ");
         if (LANGUAGE_KEY != null) {
             switch (LANGUAGE_KEY) {
                 case "2":
@@ -105,12 +105,14 @@ public class WordActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (counter == 5) {
+                    vladescu_alexandra_word_btn_next.setText("Finish");
+                }
                 if (counter <= MAX_QUESTIONS) {
                     checkIfCorrect(right);
                     newQuestion();
                 } else {
                     checkIfCorrect(right);
-                    vladescu_alexandra_word_btn_next.setText("Finish");
                     endQuiz();
                 }
 
@@ -127,10 +129,10 @@ public class WordActivity extends AppCompatActivity {
         int imageResource = getResources().getIdentifier(url, null, getPackageName());
         Drawable res = getResources().getDrawable(imageResource);
         vladescu_alexandra_word_iv_image.setImageDrawable(res);
+
         counter++;
 
         right = setAnswers(word);
-        vladescu_alexandra_word_tv_word.setText("Correct: " + correctAnswers);
 
         return right;
     }
@@ -190,7 +192,6 @@ public class WordActivity extends AppCompatActivity {
 
     private void setComponents() {
         intent = getIntent();
-        vladescu_alexandra_word_tv_word = findViewById(R.id.vladescu_alexandra_word_tv_word);
         vladescu_alexandra_word_iv_image = findViewById(R.id.vladescu_alexandra_word_iv_image);
         vladescu_alexandra_word_rg_options = findViewById(R.id.vladescu_alexandra_word_rg_options);
         vladescu_alexandra_word_rb_option1 = findViewById(R.id.vladescu_alexandra_word_rb_option1);
