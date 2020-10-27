@@ -9,3 +9,6 @@ indeplineasca urmatoarele cerinte:
 3. Aplicatia trebuie sa integreze imagini/pictograme.
 4. Sa se puna accent pe stilul interfetei grafice. Pentru acest punct o sa fie necesar studiu individual
 pentru a implementa o interfata cat mai placuta. 
+
+
+![Alt text](https://github.com/vladescualexandra/quiz-app/blob/main/activity_images/activity_main.jpg?raw=true "Main activity.")
