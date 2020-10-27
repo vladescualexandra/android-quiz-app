@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(getApplicationContext(), WordActivity.class);
                 intent.putExtra("LANGUAGE_KEY", String.valueOf(key));
                 startActivity(intent);

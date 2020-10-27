@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quiz_app.data.Word;
 import com.example.quiz_app.data.Words;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
@@ -97,8 +99,7 @@ public class WordActivity extends AppCompatActivity {
         if (rb.isChecked()) {
             correctAnswers++;
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     private View.OnClickListener questionSetup() {
@@ -125,6 +126,8 @@ public class WordActivity extends AppCompatActivity {
         int index = rand.nextInt(26);
         Word word = words.getWords().get(index);
 
+        Log.i("IMG URL: ", word.getUrl());
+
         String url = word.getUrl();
         int imageResource = getResources().getIdentifier(url, null, getPackageName());
         Drawable res = getResources().getDrawable(imageResource);
@@ -142,36 +145,56 @@ public class WordActivity extends AppCompatActivity {
         Random rand = new Random();
         String[] answers = new String[4];
         int indexOfRightAnswer = rand.nextInt(4);
+        List<Word> wrongAnswers = new ArrayList<>();
+
 
         switch (LANGUAGE_KEY) {
             case "1": // ITALIAN
                 answers[indexOfRightAnswer] = word.getItalian();
+                for (int i = 0; i < words.getWords().size(); i++) {
+                    if (!words.getWords().get(i).equals(word.getItalian())) {
+                        wrongAnswers.add(words.getWords().get(i));
+                    }
+                }
 
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = words.getWords().get(rand.nextInt(words.getWords().size())).getItalian();
+                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getItalian();
                     }
                 }
                 break;
             case "2": // SPANISH
                 answers[indexOfRightAnswer] = word.getSpanish();
 
+                for (int i = 0; i < words.getWords().size(); i++) {
+                    if (!words.getWords().get(i).equals(word.getSpanish())) {
+                        wrongAnswers.add(words.getWords().get(i));
+                    }
+                }
+
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = words.getWords().get(rand.nextInt(words.getWords().size())).getSpanish();
+                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getSpanish();
                     }
                 }
                 break;
             case "3": // FRENCH
                 answers[indexOfRightAnswer] = word.getFrench();
 
+                for (int i = 0; i < words.getWords().size(); i++) {
+                    if (!words.getWords().get(i).equals(word.getFrench())) {
+                        wrongAnswers.add(words.getWords().get(i));
+                    }
+                }
+
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = words.getWords().get(rand.nextInt(words.getWords().size())).getFrench();
+                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getFrench();
                     }
                 }
                 break;
         }
+
 
         vladescu_alexandra_word_rb_option1.setText(answers[0]);
         vladescu_alexandra_word_rb_option2.setText(answers[1]);
