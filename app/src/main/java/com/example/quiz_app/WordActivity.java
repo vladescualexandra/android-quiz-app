@@ -1,6 +1,7 @@
 package com.example.quiz_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -37,7 +39,8 @@ public class WordActivity extends AppCompatActivity {
     RadioButton vladescu_alexandra_word_rb_option4;
     Button vladescu_alexandra_word_btn_next;
     private static final int MAX_QUESTIONS = 5;
-    private static final Words words = new Words();
+    private static ArrayList<Word> words;
+    private static Words allWords = new Words();
     private static int counter = 1;
     private static int correctAnswers = 0;
     private static int right = 0;
@@ -56,27 +59,42 @@ public class WordActivity extends AppCompatActivity {
         setComponents();
 
         // SETTING THE LANGUAGE:
-        LANGUAGE_KEY = getIntent().getStringExtra("LANGUAGE_KEY");
+        LANGUAGE_KEY = getIntent().getStringExtra(getString(R.string.vladescu_alexandra_language_key));
         if (LANGUAGE_KEY != null) {
             switch (LANGUAGE_KEY) {
                 case "2":
-                    LANGUAGE_NAME = "Spanish";
+                    LANGUAGE_NAME = getString(R.string.vladescu_alexandra_language_spanish);
                     break;
                 case "3":
-                    LANGUAGE_NAME = "French";
+                    LANGUAGE_NAME = getString(R.string.vladescu_alexandra_language_french);
                     break;
                 default:
-                    LANGUAGE_NAME = "Italian";
+                    LANGUAGE_NAME = getString(R.string.vladescu_alexandra_language_italian);
                     break;
             }
 
+
+
+            words = new ArrayList<>();
+            setQuestions();
+
             right = newQuestion();
             vladescu_alexandra_word_btn_next.setOnClickListener(questionSetup());
-
-        } else {
-            Log.e("DEBUG", "LANGUAGE_KEY IS NULL!");
         }
+    }
 
+    private void setQuestions() {
+        Random rand = new Random();
+
+        int i = 0;
+        while (i<=5) {
+
+            int index = rand.nextInt(allWords.getWords().size());
+            if (!words.contains(allWords.getWords().get(index))) {
+                words.add(allWords.getWords().get(index));
+                i++;
+            }
+        }
     }
 
     private boolean checkIfCorrect(int rightAnswer) {
@@ -98,8 +116,16 @@ public class WordActivity extends AppCompatActivity {
 
         if (rb.isChecked()) {
             correctAnswers++;
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.vladescu_alexandra_correct),
+                    Toast.LENGTH_SHORT).show();
             return true;
-        } else return false;
+        } else {
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.vladescu_alexandra_wrong),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private View.OnClickListener questionSetup() {
@@ -107,7 +133,7 @@ public class WordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (counter == 5) {
-                    vladescu_alexandra_word_btn_next.setText("Finish");
+                    vladescu_alexandra_word_btn_next.setText(R.string.vladescu_alexandra_btn_finish);
                 }
                 if (counter <= MAX_QUESTIONS) {
                     checkIfCorrect(right);
@@ -122,11 +148,7 @@ public class WordActivity extends AppCompatActivity {
     }
 
     private int newQuestion() {
-        Random rand = new Random();
-        int index = rand.nextInt(26);
-        Word word = words.getWords().get(index);
-
-        Log.i("IMG URL: ", word.getUrl());
+        Word word = words.get(counter);
 
         String url = word.getUrl();
         int imageResource = getResources().getIdentifier(url, null, getPackageName());
@@ -140,6 +162,20 @@ public class WordActivity extends AppCompatActivity {
         return right;
     }
 
+    private int randIndex(int i) {
+        switch(i) {
+            case 0:
+                return 1;
+            case 1:
+                return 8;
+            case 2:
+                return 3;
+            case 3:
+                return 6;
+        }
+        return 2;
+    }
+
     private int setAnswers(Word word) {
 
         Random rand = new Random();
@@ -151,50 +187,50 @@ public class WordActivity extends AppCompatActivity {
         switch (LANGUAGE_KEY) {
             case "1": // ITALIAN
                 answers[indexOfRightAnswer] = word.getItalian();
-                for (int i = 0; i < words.getWords().size(); i++) {
-                    if (!words.getWords().get(i).equals(word.getItalian())) {
-                        wrongAnswers.add(words.getWords().get(i));
+                for (int i = 0; i < allWords.getWords().size(); i++) {
+                    if (!allWords.getWords().get(i).equals(word.getItalian())) {
+                        wrongAnswers.add(allWords.getWords().get(i));
                     }
                 }
 
+
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getItalian();
+                        answers[i] = wrongAnswers.get(randIndex(i)).getItalian();
                     }
                 }
                 break;
             case "2": // SPANISH
                 answers[indexOfRightAnswer] = word.getSpanish();
 
-                for (int i = 0; i < words.getWords().size(); i++) {
-                    if (!words.getWords().get(i).equals(word.getSpanish())) {
-                        wrongAnswers.add(words.getWords().get(i));
+                for (int i = 0; i < allWords.getWords().size(); i++) {
+                    if (!allWords.getWords().get(i).equals(word.getSpanish())) {
+                        wrongAnswers.add(allWords.getWords().get(i));
                     }
                 }
 
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getSpanish();
+                        answers[i] = wrongAnswers.get(randIndex(i)).getSpanish();
                     }
                 }
                 break;
             case "3": // FRENCH
                 answers[indexOfRightAnswer] = word.getFrench();
 
-                for (int i = 0; i < words.getWords().size(); i++) {
-                    if (!words.getWords().get(i).equals(word.getFrench())) {
-                        wrongAnswers.add(words.getWords().get(i));
+                for (int i = 0; i < allWords.getWords().size(); i++) {
+                    if (!allWords.getWords().get(i).equals(word.getFrench())) {
+                        wrongAnswers.add(allWords.getWords().get(i));
                     }
                 }
 
                 for (int i = 0; i < 4; i++) {
                     if (i != indexOfRightAnswer) {
-                        answers[i] = wrongAnswers.get(rand.nextInt(wrongAnswers.size())).getFrench();
+                        answers[i] = wrongAnswers.get(randIndex(i)).getFrench();
                     }
                 }
                 break;
         }
-
 
         vladescu_alexandra_word_rb_option1.setText(answers[0]);
         vladescu_alexandra_word_rb_option2.setText(answers[1]);
@@ -207,8 +243,8 @@ public class WordActivity extends AppCompatActivity {
     private void endQuiz() {
         // TODO endQuiz
         Intent intent = new Intent(getApplicationContext(), FinishActivity.class);
-        intent.putExtra("CORRECT_ANSWERS", String.valueOf(correctAnswers));
-        intent.putExtra("NUMBER_OF_QUESTIONS", String.valueOf(MAX_QUESTIONS));
+        intent.putExtra(getString(R.string.vladescu_alexandra_correct_answers), String.valueOf(correctAnswers));
+        intent.putExtra(getString(R.string.vladescu_alexandra_number_of_questions), String.valueOf(MAX_QUESTIONS));
         startActivity(intent);
         finish();
     }

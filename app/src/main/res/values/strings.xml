@@ -10,4 +10,13 @@
     <string name="vladescu_alexandra_main_btn_go">Let\'s go for it!</string>
     <string name="vladescu_alexandra_word_btn_next">Next</string>
     <string name="vladescu_alexandra_finish_btn_restart">Restart</string>
+    <string name="vladescu_alexandra_language_key">language_key</string>
+    <string name="vladescu_alexandra_language_spanish">Spanish</string>
+    <string name="vladescu_alexandra_language_french">French</string>
+    <string name="vladescu_alexandra_language_italian">Italian</string>
+    <string name="vladescu_alexandra_btn_finish">Finish</string>
+    <string name="vladescu_alexandra_correct_answers">CORRECT_ANSWERS</string>
+    <string name="vladescu_alexandra_number_of_questions">NUMBER_OF_QUESTIONS</string>
+    <string name="vladescu_alexandra_correct">Correct.</string>
+    <string name="vladescu_alexandra_wrong">Wrong.</string>
 </resources>

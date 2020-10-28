@@ -27,8 +27,8 @@ public class FinishActivity extends AppCompatActivity {
 
         intent = getIntent();
         vladescu_alexandra_finish_tv_result = findViewById(R.id.vladescu_alexandra_finish_tv_result);
-        CORRECT_ANSWERS = intent.getStringExtra("CORRECT_ANSWERS");
-        NUMBER_OF_QUESTIONS = intent.getStringExtra("NUMBER_OF_QUESTIONS");
+        CORRECT_ANSWERS = intent.getStringExtra(getString(R.string.vladescu_alexandra_correct_answers));
+        NUMBER_OF_QUESTIONS = intent.getStringExtra(getString(R.string.vladescu_alexandra_number_of_questions));
 
 
         String result = CORRECT_ANSWERS + "/" + NUMBER_OF_QUESTIONS;

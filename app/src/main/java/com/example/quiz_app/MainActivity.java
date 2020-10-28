@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LANGUAGE_KEY = "language_key";
     private RadioGroup vladescu_alexandra_main_rg_language;
     private RadioButton vladescu_alexandra_main_rb_language_italian;
     private RadioButton vladescu_alexandra_main_rb_language_spanish;
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         vladescu_alexandra_main_btn_go.setOnClickListener(startQuizEvent());
 
-
     }
 
     private View.OnClickListener startQuizEvent() {
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), WordActivity.class);
-                intent.putExtra("LANGUAGE_KEY", String.valueOf(key));
+                intent.putExtra(getString(R.string.vladescu_alexandra_language_key), String.valueOf(key));
                 startActivity(intent);
                 finish();
             }
